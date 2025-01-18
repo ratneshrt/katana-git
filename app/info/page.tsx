@@ -1,5 +1,16 @@
 "use client"
 
+import { Suspense } from 'react'
+
+export default function(){
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <Info></Info>
+        </Suspense>
+    )
+}
+
+
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 import { MainPage } from "../components/MainPage" 
@@ -30,7 +41,7 @@ interface animeData{
     about: string
 }
 
-export default function(){
+function Info(){
     const id = useSearchParams()
     const githubId = id.get('id')
     const [gitHubdata, setGitHubData] = useState<githubData>()
