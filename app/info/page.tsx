@@ -89,7 +89,7 @@ function Info(){
                 "100+": [17, 13, 3180, 2910, 14, 18473, 2423, 53901, 2535, 12465, 12464, 85]
             }
             if (publicRepos <= 5) {
-                return randomFromArray(animeCharGroup["0-6"])
+                return randomFromArray(animeCharGroup["0-5"])
             }
             if (publicRepos <= 15) {
                 return randomFromArray(animeCharGroup["6-15"])
