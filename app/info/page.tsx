@@ -161,10 +161,18 @@ function Info(){
         )
     }
 
-    if (!gitHubdata || !animeData){
+    if (!gitHubdata){
         return (<>
             No profile data
         </>)
+    }
+
+    if(!animeData){
+        return (
+            <>
+                Loading...
+            </>
+        )
     }
     
 
