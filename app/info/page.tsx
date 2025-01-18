@@ -17,6 +17,7 @@ import { MainPage } from "../components/MainPage"
 import { BackgroundLines } from "../components/background-lines"
 import { Katana } from "../components/Katana"
 import { NotFound } from "../components/NotFound404"
+import { Spinner } from '../components/Spinner'
 
 interface githubData{
     name: string
@@ -80,12 +81,12 @@ function Info(){
         }
         const determineAnimeChar = (publicRepos: number) => {
             const animeCharGroup: Record<string, number[]> = {
-                "0-5": [1, 5, 13, 11, 80, 71, 417, 119241, 36828, 35237, 286],
-                "6-15": [17, 40, 69, 424, 22, 23, 65137, 72676, 118647, 118699],
-                "16-30": [62, 85, 63729, 45627, 87275, 146156, 164471, 2007, 1742, 4004],
-                "31-50": [75, 14, 10, 6, 145, 120, 50361, 70847, 24, 100, 491],
-                "51-100": [246, 422, 913, 53901, 12464, 70, 1475, 122474, 56381, 121922],
-                "100+": [356, 36765, 119241, 144511, 119245, 1375, 62391, 27827, 114333, 35236]
+                "0-5": [145],
+                "6-15": [4775, 3178, 3889, 2008, 23420, 23418],
+                "16-30": [1555, 2174, 3770, 1901],
+                "31-50": [2007, 306, 1694, 1902, 1900, 1555, 22893, 2405, 3179, 2006],
+                "51-100": [1662, 307, 2455, 2767, 2672],
+                "100+": [17, 13, 3180, 2910, 14, 18473, 2423, 53901, 2535, 12465, 12464, 85]
             }
             if (publicRepos <= 5) {
                 return randomFromArray(animeCharGroup["0-6"])
@@ -170,7 +171,7 @@ function Info(){
     if(!animeData){
         return (
             <>
-                Loading...
+                <Spinner></Spinner>
             </>
         )
     }
